@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Up Down Game</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="game-container">
+        <header>
+            <h1>Up Down Game</h1>
+        </header>
+
+        <main>
+            <!-- Character Section -->
+            <section id="character-area" class="character-area">
+                <div class="character-placeholder" id="character-display">
+                    <!-- Character Image will go here -->
+                    <div class="face neutral"></div>
+                </div>
+                <div class="speech-bubble" id="message-display">
+                    Welcome! Place your bet!
+                </div>
+            </section>
+
+            <!-- Game Board -->
+            <section class="game-board">
+                <div class="display-area">
+                    <div class="prompt-text">주사위 2개 합이 7보다 클까? 작을까?</div>
+                    <div id="dice-container" class="dice-container hidden">
+                        <div class="die" id="die-1">🎲</div>
+                        <div class="die" id="die-2">🎲</div>
+                    </div>
+                    <div id="result-sum" class="result-sum hidden">?</div>
+                </div>
+
+                <div class="controls">
+                    <div class="betting-controls">
+                        <label>Bet Amount:</label>
+                        <div class="bet-selector" id="bet-selector">
+                            <div class="current-bet-coin" id="current-bet-btn">
+                                <img src="assets/gold_coin.png" alt="Coin">
+                                <span id="current-bet-value">10</span>
+                            </div>
+                            <div class="bet-options hidden" id="bet-options">
+                                <div class="coin-option" data-value="10">10</div>
+                                <div class="coin-option" data-value="20">20</div>
+                                <div class="coin-option" data-value="30">30</div>
+                                <div class="coin-option" data-value="ALL">ALL</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="action-buttons">
+                        <button id="btn-up" class="btn btn-up">UP ⬆️</button>
+                        <button id="btn-down" class="btn btn-down">DOWN ⬇️</button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Stats / Economy -->
+            <section class="stats-panel">
+                <div class="stat-item">
+                    <span class="icon">💰</span>
+                    <span class="label">Wallet</span>
+                    <span id="wallet-balance" class="value">100</span>
+                </div>
+                <div class="stat-item">
+                    <span class="icon">🏦</span>
+                    <span class="label">Loan</span>
+                    <span id="loan-balance" class="value">0</span>
+                </div>
+                <div class="stat-item">
+                    <span class="icon">📈</span>
+                    <span class="label">Interest</span>
+                    <span id="interest-rate" class="value">10%</span>
+                </div>
+            </section>
+
+            <section class="bank-controls">
+                <button id="btn-loan" class="btn btn-secondary">Borrow 100</button>
+                <button id="btn-repay" class="btn btn-secondary">Repay 100</button>
+            </section>
+        </main>
+    </div>
+
+    <script type="module" src="app.js"></script>
+</body>
+
+</html>
